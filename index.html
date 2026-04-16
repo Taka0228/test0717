@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>猫の可愛さ無限大！ - Cat Lovers Paradise</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap');
+
+        body {
+            font-family: 'M PLUS Rounded+1c', sans-serif;
+            background-color: #fffaf0;
+        }
+
+        .cat-card:hover {
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+        }
+
+        .meow-animation {
+            animation: pop-up 0.5s ease-out forwards;
+            position: absolute;
+            pointer-events: none;
+            color: #ff6b6b;
+            font-weight: bold;
+            z-index: 50;
+        }
+
+        @keyframes pop-up {
+            0% { opacity: 0; transform: translateY(0) scale(0.5); }
+            50% { opacity: 1; transform: translateY(-20px) scale(1.2); }
+            100% { opacity: 0; transform: translateY(-40px) scale(1); }
+        }
+
+        .hero-pattern {
+            background-color: #fce7f3;
+            background-image: radial-gradient(#f9a8d4 0.5px, transparent 0.5px);
+            background-size: 20px 20px;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Header -->
+    <header class="sticky top-0 z-40 bg-white/80 backdrop-blur-md border-b border-pink-100">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-pink-500 flex items-center gap-2">
+                <i class="fas fa-paw"></i> ねこにゃんパーク
+            </h1>
+            <nav class="hidden md:flex gap-6">
+                <a href="#about" class="hover:text-pink-500 transition">魅力</a>
+                <a href="#gallery" class="hover:text-pink-500 transition">ギャラリー</a>
+                <a href="#points" class="hover:text-pink-500 transition">こだわり</a>
+            </nav>
+            <button onclick="makeMeow(event)" class="bg-pink-500 hover:bg-pink-600 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg transition">
+                鳴かせてみる
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-pattern py-16 md:py-24">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0 text-center md:text-left">
+                <h2 class="text-4xl md:text-6xl font-extrabold text-pink-600 mb-6 leading-tight">
+                    世界で一番、<br>可愛い生き物。
+                </h2>
+                <p class="text-lg text-gray-700 mb-8">
+                    ふわふわの毛、丸い瞳、気まぐれな性格。<br>
+                    猫がいるだけで、毎日はこんなに幸せになれる。
+                </p>
+                <div class="flex flex-wrap justify-center md:justify-start gap-4">
+                    <a href="#gallery" class="bg-white text-pink-500 border-2 border-pink-500 px-8 py-3 rounded-full font-bold hover:bg-pink-50 transition">
+                        写真を見る
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center relative">
+                <div class="w-64 h-64 md:w-80 md:h-80 bg-white rounded-full overflow-hidden border-8 border-white shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=800&q=80" alt="可愛い猫" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/400x400?text=Cute+Cat'">
+                </div>
+                <div class="absolute -bottom-4 -right-4 bg-yellow-400 p-4 rounded-2xl shadow-lg rotate-12">
+                    <p class="font-bold text-white text-lg">ゴロゴロ♪</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Charm Points -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h3 class="text-3xl font-bold mb-4">猫のここが「たまらない」！</h3>
+                <div class="w-20 h-1 bg-pink-400 mx-auto"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-8 rounded-3xl bg-pink-50 text-center cat-card">
+                    <div class="text-4xl mb-4">🐾</div>
+                    <h4 class="text-xl font-bold mb-3">ぷにぷにの肉球</h4>
+                    <p class="text-gray-600">あの独特の感触。ずっと触っていたくなる魔法のパーツです。</p>
+                </div>
+                <div class="p-8 rounded-3xl bg-yellow-50 text-center cat-card">
+                    <div class="text-4xl mb-4">👂</div>
+                    <h4 class="text-xl font-bold mb-3">三角形の耳</h4>
+                    <p class="text-gray-600">音に反応してピクピク動く姿。イカ耳になるのもまた一興。</p>
+                </div>
+                <div class="p-8 rounded-3xl bg-blue-50 text-center cat-card">
+                    <div class="text-4xl mb-4">🌙</div>
+                    <h4 class="text-xl font-bold mb-3">きまぐれな瞳</h4>
+                    <p class="text-gray-600">暗闇で光り、明るい場所で細くなる。神秘的で愛くるしい目。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery -->
+    <section id="gallery" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h3 class="text-3xl font-bold mb-10 text-center">癒やしのギャラリー</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="aspect-square overflow-hidden rounded-2xl">
+                    <img src="https://images.unsplash.com/photo-1573865526739-10659fef78a1?auto=format&fit=crop&w=400&q=80" alt="猫1" class="w-full h-full object-cover hover:scale-110 transition duration-500">
+                </div>
+                <div class="aspect-square overflow-hidden rounded-2xl">
+                    <img src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&fit=crop&w=400&q=80" alt="猫2" class="w-full h-full object-cover hover:scale-110 transition duration-500">
+                </div>
+                <div class="aspect-square overflow-hidden rounded-2xl">
+                    <img src="https://images.unsplash.com/photo-1529778873920-4da4926a72c2?auto=format&fit=crop&w=400&q=80" alt="猫3" class="w-full h-full object-cover hover:scale-110 transition duration-500">
+                </div>
+                <div class="aspect-square overflow-hidden rounded-2xl">
+                    <img src="https://images.unsplash.com/photo-1495360010541-f48722b34f7d?auto=format&fit=crop&w=400&q=80" alt="猫4" class="w-full h-full object-cover hover:scale-110 transition duration-500">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interaction Section -->
+    <section class="py-20 bg-pink-500 text-white overflow-hidden relative">
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <h3 class="text-4xl font-bold mb-6">あなたも猫派になりませんか？</h3>
+            <p class="text-xl mb-10 opacity-90">猫との暮らしは、ストレスを減らし心に豊かさを与えてくれます。</p>
+            <button onclick="spawnCats()" class="bg-white text-pink-600 px-10 py-4 rounded-full font-bold text-xl shadow-2xl hover:bg-yellow-100 transition transform hover:scale-105">
+                猫をたくさん呼ぶ！
+            </button>
+        </div>
+        <div id="cat-rain-container" class="absolute inset-0 pointer-events-none"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white py-10 border-t border-gray-100">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-gray-400 mb-4">&copy; 2024 ねこにゃんパーク. All for cats.</p>
+            <div class="flex justify-center gap-6 text-2xl text-pink-200">
+                <i class="fas fa-cat"></i>
+                <i class="fas fa-heart"></i>
+                <i class="fas fa-fish"></i>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function makeMeow(e) {
+            const meow = document.createElement('div');
+            meow.className = 'meow-animation';
+            meow.innerText = 'ニャ〜ン！';
+            
+            // マウス位置またはボタン位置に配置
+            const rect = e.target.getBoundingClientRect();
+            meow.style.left = (e.clientX || rect.left + rect.width / 2) + 'px';
+            meow.style.top = (e.clientY || rect.top) + 'px';
+            
+            document.body.appendChild(meow);
+            
+            setTimeout(() => {
+                meow.remove();
+            }, 1000);
+        }
+
+        function spawnCats() {
+            const container = document.getElementById('cat-rain-container');
+            const icons = ['🐾', '🐱', '🐈', '😻', '😸', '🐈‍⬛'];
+            
+            for (let i = 0; i < 30; i++) {
+                setTimeout(() => {
+                    const cat = document.createElement('div');
+                    cat.innerText = icons[Math.floor(Math.random() * icons.length)];
+                    cat.style.position = 'absolute';
+                    cat.style.left = Math.random() * 100 + '%';
+                    cat.style.top = '-50px';
+                    cat.style.fontSize = (Math.random() * 30 + 20) + 'px';
+                    cat.style.transition = 'all ' + (Math.random() * 2 + 1) + 's linear';
+                    cat.style.zIndex = '5';
+                    
+                    container.appendChild(cat);
+                    
+                    // アニメーション
+                    setTimeout(() => {
+                        cat.style.top = '120%';
+                        cat.style.transform = 'rotate(' + (Math.random() * 360) + 'deg)';
+                    }, 50);
+                    
+                    // 削除
+                    setTimeout(() => {
+                        cat.remove();
+                    }, 3000);
+                }, i * 100);
+            }
+        }
+    </script>
+</body>
+</html>
